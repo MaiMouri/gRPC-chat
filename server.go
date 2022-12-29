@@ -5,8 +5,9 @@ import (
 	"net"
 	"os"
 
-	"google.golang.org/grpc"
 	"grpcChatServer/chatserver"
+
+	"google.golang.org/grpc"
 )
 
 func main() {
@@ -14,7 +15,7 @@ func main() {
 	//assign port
 	Port := os.Getenv("PORT")
 	if Port == "" {
-		Port = "5000" //default Port set to 5000 if PORT is not set in env
+		Port = "8080" //default Port set to 5000 if PORT is not set in env
 	}
 
 	//init listener
@@ -27,10 +28,9 @@ func main() {
 	//gRPC server instance
 	grpcserver := grpc.NewServer()
 
-
 	//register ChatService
 	cs := chatserver.ChatServer{}
-	chatserver.RegisterServicesServer(grpcserver,&cs)
+	chatserver.RegisterServicesServer(grpcserver, &cs)
 
 	//grpc listen and serve
 	err = grpcserver.Serve(listen)
