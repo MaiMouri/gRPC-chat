@@ -19,7 +19,8 @@ touch chat.proto
 
 ## create .proto file
 
-``syntax = "proto3";
+```
+syntax = "proto3";
 
 package chatserver;
 
