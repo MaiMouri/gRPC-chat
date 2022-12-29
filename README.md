@@ -63,7 +63,7 @@ touch server.go
 
 
 
-# How to chat...
+#How to chat...
 
 Terminalを開く (Server用)
 
@@ -74,6 +74,7 @@ env PORT=5000 go run server.go
 Terminalをさらに２つ開く (Client用)
 
 - 両方のTerminalで `client.go` を起動する
+
 ```
 go run client.go
 ```

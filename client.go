@@ -14,6 +14,7 @@ import (
 
 func main() {
 
+	// Interface..
 	fmt.Println("Enter Server IP:Port ::: ")
 	reader := bufio.NewReader(os.Stdin)
 	serverID, err := reader.ReadString('\n')
@@ -53,7 +54,7 @@ func main() {
 
 }
 
-//clienthandle
+// clienthandle
 type clienthandle struct {
 	stream     chatserver.Services_ChatServiceClient
 	clientName string
@@ -71,7 +72,7 @@ func (ch *clienthandle) clientConfig() {
 
 }
 
-//send message
+// send message
 func (ch *clienthandle) sendMessage() {
 
 	// create a loop
@@ -99,7 +100,7 @@ func (ch *clienthandle) sendMessage() {
 
 }
 
-//receive message
+// receive message
 func (ch *clienthandle) receiveMessage() {
 
 	//create a loop
@@ -110,7 +111,7 @@ func (ch *clienthandle) receiveMessage() {
 		}
 
 		//print message to console
-		fmt.Printf("%s : %s \n",mssg.Name,mssg.Body)
-		
+		fmt.Printf("%s : %s \n", mssg.Name, mssg.Body)
+
 	}
 }
