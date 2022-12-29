@@ -13,7 +13,7 @@ import (
 func main() {
 
 	//assign port
-	Port := os.Getenv("PORT")
+	Port := os.Getenv("PORT") //
 	if Port == "" {
 		Port = "8080" //default Port set to 5000 if PORT is not set in env
 	}
@@ -32,7 +32,7 @@ func main() {
 	cs := chatserver.ChatServer{}
 	chatserver.RegisterServicesServer(grpcserver, &cs)
 
-	//grpc listen and serve
+	//grpc listen and serve at selected Port
 	err = grpcserver.Serve(listen)
 	if err != nil {
 		log.Fatalf("Failed to start gRPC Server :: %v", err)

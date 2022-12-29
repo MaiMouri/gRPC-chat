@@ -2,18 +2,21 @@ syntax = "proto3";
 
 package chatserver;
 
+// 1) Client to Server
 message FromClient {
 
     string name = 1;
     string body = 2;
 }
 
+// 2) Server to Client
 message FromServer {
 
     string name = 1;
     string body = 2; 
 }
 
+// Create RPC service named as ChatService
 service Services {
 
     rpc ChatService(stream FromClient) returns (stream FromServer){};
